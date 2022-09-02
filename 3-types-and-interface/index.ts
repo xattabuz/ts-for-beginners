@@ -59,3 +59,20 @@ const car: ICar = {
 console.log(car)
 
 // !!!!Merge declare types don't support!!!
+
+// =========== EXAMPLE 1 =========== 
+interface ICompany {
+	readonly name: string
+}
+
+interface ISubCompany extends ICompany{
+	// Pastda biriktirilgan obj ni ozgartirmaslig uchun readonly ishlatilinadi!
+	readonly salary: number
+}
+
+let company: ISubCompany = {
+	name: "Payme",
+	salary: 300
+}
+
+console.log(company)
